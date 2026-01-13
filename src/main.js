@@ -8,9 +8,11 @@ gsap.registerPlugin(ScrollTrigger);
 import Lenis from 'lenis'
 
 const lenis = new Lenis({
-  duration: 1,
+  duration: 2.5,
   easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
   smoothWheel: true,
+  wheelMultiplier: 0.7, // Fast scroll kela tari page ghai-gadbadit palnar nahi.
+  touchMultiplier: 1.5 // Mobile sathi
 });
 lenis.on('scroll', ScrollTrigger.update);
 
@@ -65,7 +67,7 @@ gsap.timeline({
     trigger: ".art-0",
     start: "top top",
     end: "bottom top",
-    scrub: true,
+    scrub: 1.5,
     pin: true,
   }
 })
@@ -81,7 +83,7 @@ gsap.timeline({
     trigger: ".art-1",
     start: "top top",
     end: "bottom center",
-    scrub: true
+    scrub: 1.5
   }
 })
   .to(uniforms.uNoiseScale, { value: 0.5 })
@@ -94,7 +96,7 @@ gsap.timeline({
     trigger: ".art-2",
     start: "top center",
     end: "bottom center",
-    scrub: true
+    scrub: 1.5
   }
 })
   .to(uniforms.uNoiseScale, { value: 3.0 })
@@ -108,7 +110,7 @@ gsap.timeline({
     trigger: ".art-3",
     start: "top center",
     end: "bottom center",
-    scrub: true,
+    scrub: 1.5,
   }
 })
   .to(uniforms.uNoiseScale, { value: 1.2 })
@@ -121,7 +123,7 @@ gsap.timeline({
     trigger: ".art-4",
     start: "top bottom",
     end: "bottom bottom",
-    scrub: true,
+    scrub: 1.5,
   }
 })
   .to(uniforms.uNoiseScale, { value: 0.1 })
