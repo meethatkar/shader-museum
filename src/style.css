@@ -1,0 +1,86 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+}
+html.lenis,body.lenis{
+  height: 100%;
+  width: 100%;
+  background-color: #0e0e0e;
+  color: #fff;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent]{
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+canvas{
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+}
+main{
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+section.art{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 10vmax;
+}
+.art-0{
+  text-align:  center;
+  overflow-x: hidden;
+  /* background-color: black; */
+}
+.art-0>h1{
+  font-size: 6rem;
+}
+.art-0>p{
+  font-size: 1.5rem;
+}
+h1 {
+  font-size: 5rem;
+  letter-spacing: 0.1em;
+}
+
+p {
+  opacity: 0.6;
+  margin-top: 1rem;
+}
+
+/* --- MOBILE RESPONSIVE CSS --- */
+@media (max-width: 768px) {
+  /* 1. Text thoda chota kara */
+  h1 {
+    font-size: 3rem; 
+    line-height: 1.1;
+  }
+
+  p {
+    font-size: 1rem;
+    max-width: 90%;
+  }
+
+  /* 2. Padding adjust kara (Mobile var text screen chya javal asava) */
+  section.art {
+    padding-left: 2rem; 
+    padding-right: 1rem;
+    /* Optional: Text la thoda khali kiva var ghyaycha asel tar */
+    justify-content: flex-end; 
+    padding-bottom: 5rem;
+  }
+}
